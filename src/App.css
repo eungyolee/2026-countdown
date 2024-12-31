@@ -1,0 +1,59 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.clock {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 1rem;
+}
+
+.clock-label {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.clock span,
+.clock-label span {
+  margin: 0 0.5rem;
+  width: 6rem;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+}
+
+.clock-container button {
+  margin-top: 1rem;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  text-align: right;
+  font-size: 0.8em;
+  margin: 0;
+}
+
+@media screen and (max-width: 660px) {
+  .clock-title {
+    font-size: 2.5rem;
+  }
+
+  .clock {
+    font-size: 2rem;
+  }
+
+  .clock-label {
+    font-size: 1rem;
+  }
+
+  .clock span,
+  .clock-label span {
+    width: 4rem;
+    margin: 0;
+  }
+}

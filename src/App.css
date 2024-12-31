@@ -7,17 +7,20 @@
 .clock {
   font-size: 3rem;
   line-height: 1.1;
-  margin: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .clock-label {
   font-size: 1.5rem;
-  margin: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .clock span,
 .clock-label span {
-  margin: 0 0.5rem;
   width: 6rem;
   display: inline-block;
   text-align: center;
@@ -33,7 +36,7 @@
   bottom: 1rem;
   right: 1rem;
   text-align: right;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -57,6 +60,6 @@
   }
 
   .copyright {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }

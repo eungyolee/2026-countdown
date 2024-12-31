@@ -39,7 +39,12 @@ function App() {
   }
 
   function copyTime() {
-    const text = `현재 ${TARGET_DATE.split(' ')[0].replaceAll('-', '. ')}까지 ${timeLeft.days}일 ${timeLeft.hours}시간 ${timeLeft.minutes}분 ${timeLeft.seconds}초 남았습니다.`;
+    let text = '';
+    if (!isRunning) {
+      text = `2026년 새해가 밝았습니다!`;
+    } else {
+      text = `현재 ${TARGET_DATE.split(' ')[0].replaceAll('-', '. ')}까지 ${timeLeft.days}일 ${timeLeft.hours}시간 ${timeLeft.minutes}분 ${timeLeft.seconds}초 남았습니다.`;
+    }
     navigator.clipboard.writeText(text);
     alert('시간이 복사되었습니다.');
   }

@@ -1,8 +1,14 @@
-import { useState, useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from 'react';
+import './App.css';
 
 function App() {
-  const [timeLeft, setTimeLeft] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+    milliseconds: 0,
+  });
   const [isRunning, setIsRunning] = useState(true);
   const [year, setYear] = useState(new Date().getFullYear());
 
@@ -10,35 +16,26 @@ function App() {
   const CLOCK_TITLE = "2026년 카운트다운";
 
   function checkRunning() {
-    const difference = +new Date(TARGET_DATE) - +new Date();
-
-    if (difference > 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return new Date(TARGET_DATE) - new Date() > 0;
   }
 
   function calculateTimeLeft() {
-    const difference = +new Date(TARGET_DATE) - +new Date();
-
-    if (difference > 0) {
-      return {
+    const difference = new Date(TARGET_DATE) - new Date();
+    return difference > 0
+      ? {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((difference / 1000 / 60) % 60),
         seconds: Math.floor((difference / 1000) % 60),
         milliseconds: Math.floor((difference % 1000) / 10),
-      };
-    } else {
-      return {
+      }
+      : {
         days: 0,
         hours: 0,
         minutes: 0,
         seconds: 0,
         milliseconds: 0,
       };
-    }
   }
 
   function copyTime() {
@@ -94,7 +91,7 @@ function App() {
         >EUNGYOLEE</a> All rights reserved.
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

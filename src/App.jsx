@@ -14,7 +14,7 @@ function App() {
   const [year, setYear] = useState(new Date().getFullYear());
   const ref = useRef(null);
 
-  const TARGET_DATE = "2026-01-01 00:00:00";
+  const TARGET_DATE = "2025-01-01 00:00:00";
   const CLOCK_TITLE = "2026년 카운트다운";
 
   const checkRunning = () => new Date(TARGET_DATE) - new Date() > 0;
@@ -52,11 +52,6 @@ function App() {
     console.log("https://sunrint-ana.dev");
   };
 
-  const setFireworks = () => {
-    if (!ref.current) return;
-    isRunning ? ref.current.stop() : ref.current.start();
-  };
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
@@ -67,6 +62,11 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const setFireworks = () => {
+      if (!ref.current) return;
+      isRunning ? ref.current.stop() : ref.current.start();
+    };
+
     setFireworks();
   }, [isRunning]);
 

@@ -14,7 +14,7 @@ function App() {
   const [year, setYear] = useState(new Date().getFullYear());
   const ref = useRef(null);
 
-  const TARGET_DATE = "2025-01-01 00:00:00";
+  const TARGET_DATE = "2026-01-01 00:00:00";
   const CLOCK_TITLE = "2026년 카운트다운";
 
   const checkRunning = () => new Date(TARGET_DATE) - new Date() > 0;
@@ -104,7 +104,7 @@ function App() {
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: 9999,
+          zIndex: -1,
         }}
         colors={['#cc3333', '#4CAF50', '#81C784', '#FFD700', '#FF69B4', '#00BFFF']}
         count={3}
